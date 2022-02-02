@@ -24,14 +24,9 @@ async def button(bot, update):
         await youtube_dl_call_back(bot, update)
     elif "=" in cb_data:
         await ddl_call_back(bot, update)
-    
 
-@Clinton.on_callback_query()
-async def button(bot, update):
-
-    cb_data = update.data
-    if "aboutbot" in cb_data:
-        await update.message.edit(
+    elif "aboutbot" in cb_data:
+         await update.message.edit(
             text=Translation.ABOUT_TEXT,
             parse_mode="html",
             disable_web_page_preview=True,
@@ -93,10 +88,7 @@ async def button(bot, update):
                 ]
             )
         )
-
-@Clinton.on_callback_query()
-async def button(bot, update):
  
-      if  'close'  in update.data:
-                await update.message.delete()
+    elif  'close'  in update.data:
+            await update.message.delete()
 
