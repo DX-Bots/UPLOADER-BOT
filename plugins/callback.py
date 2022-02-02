@@ -14,7 +14,10 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQ
 
 @Clinton.on_callback_query(filters.regex('^X0$'))
 async def delt(bot, update):
-          await update.message.delete(True)
+          try:
+              await update.message.delete(True)
+          except:
+              pass
 
 @Clinton.on_callback_query()
 async def button(bot, update):
